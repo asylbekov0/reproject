@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fa">
+  <meta name="description" content="RE — учебный сайт магазина новых и б/у смартфонов: каталог, фильтры и предварительная оценка телефона.">
+  <title>RE — смартфоны с понятной историей</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+  <div class="notice"><div class="wrap notice-inner"><span>RE / Бишкек</span><span>Учебный проект · цены, наличие и контакты демонстрационные</span></div></div>
+  <header class="site-header" id="top"><div class="wrap header-inner">
+    <a class="logo" href="#top" aria-label="RE — на главную"><span class="logo-mark">re<span class="logo-dot">.</span></span><span class="logo-sub">смартфоны<br>с историей</span></a>
+    <button id="menuToggle" class="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="primaryNav"><span></span><span></span><span></span></button>
+    <nav class="nav" id="primaryNav" aria-label="Главное меню"><a href="#catalog">Каталог</a><a href="#sell">Продать телефон</a><a href="#how">Как это работает</a><a href="#about">О магазине</a><a href="#contacts">Контакты</a></nav>
+    <a class="header-link" href="#sell">Узнать оценку <span aria-hidden="true">↗</span></a>
+  </div></header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="heroTitle">
+      <div class="hero-copy"><div class="eyebrow"><span class="tiny-square"></span> МАГАЗИН СМАРТФОНОВ · БИШКЕК</div>
+        <h1 id="heroTitle">Новый телефон.<br><em>Или тот самый,</em><br>но выгоднее.</h1>
+        <p class="hero-lead">Помогаем подобрать новый или бывший в использовании смартфон. А если хотите обновиться — начните с предварительной оценки своего устройства.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#catalog">Смотреть каталог <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="#sell">Продать смартфон</a></div>
+        <p class="small-disclaimer">* Сайт демонстрационный. Продажи и отправка заявок не выполняются.</p>
+      </div>
+      <div class="hero-feature"><div class="feature-photo"><img src="assets/images/hd/iphone13-box.jpg" alt="Реальное фото iPhone 13 на коробке" width="640" height="480" fetchpriority="high" id="heroPhone"></div><div class="feature-bottom"><span class="feature-kicker">ВЫБОР РЕДАКЦИИ · ПРИМЕР ТОВАРА</span><div class="feature-line"><div><strong>iPhone 13</strong><small>128 ГБ · Б/у · хорошее</small></div><span>24 900 сом</span></div></div></div>
+    </section>
+
+    <section class="value-band" aria-label="Наши направления"><div class="wrap value-items"><div><span class="band-number">01</span><div><strong>Покупка смартфонов</strong><small>Новые и бывшие в использовании модели</small></div></div><div><span class="band-number">02</span><div><strong>Предварительная оценка</strong><small>Укажите состояние и получите текст заявки</small></div></div><div><span class="band-number">03</span><div><strong>Понятные условия</strong><small>Проверка перед окончательной сделкой</small></div></div></div></section>
+
+    <section class="catalog section wrap" id="catalog" aria-labelledby="catalogTitle">
+      <div class="section-header"><div><div class="eyebrow">01 / ВЫБРАТЬ ТЕЛЕФОН</div><h2 id="catalogTitle">Каталог смартфонов<span class="blue-period">.</span></h2><p class="section-intro">Подберите устройство по бренду, состоянию и бюджету.</p></div><div class="count-block"><strong id="count">0</strong><small>моделей в подборке</small></div></div>
+      <div class="filter-panel"><div class="tabs" role="group" aria-label="Тип телефона"><button type="button" class="tab is-active" data-type="all" aria-pressed="true">Все</button><button type="button" class="tab" data-type="new" aria-pressed="false">Новые</button><button type="button" class="tab" data-type="used" aria-pressed="false">Б/у</button></div>
+        <div class="filter-fields"><label>Бренд<select id="brandFilter"><option value="all">Все бренды</option><option value="Apple">Apple</option><option value="Samsung">Samsung</option><option value="Xiaomi">Xiaomi</option></select></label><label>Состояние<select id="conditionFilter"><option value="all">Любое</option><option value="new">Новое</option><option value="excellent">Отличное</option><option value="good">Хорошее</option></select></label><label>Максимальная цена<select id="priceFilter"><option value="all">Любая цена</option><option value="20000">До 20 000 сом</option><option value="30000">До 30 000 сом</option><option value="45000">До 45 000 сом</option><option value="60000">До 60 000 сом</option></select></label><button class="reset" id="resetFilters" type="button">Сбросить <span aria-hidden="true">↺</span></button></div>
+      </div>
+      <div class="catalog-meta"><p id="resultText" role="status" aria-live="polite">Загрузка каталога…</p><span>Фотографии реальных моделей; не фотографии продаваемых экземпляров</span></div>
+      <div class="products" id="productGrid"></div>
+      <div id="emptyState" class="empty-state" hidden><strong>Ничего не нашлось</strong><p>Попробуйте изменить бренд, состояние или верхнюю границу цены.</p><button type="button" class="btn btn-primary" id="emptyReset">Показать все модели</button></div>
+      <div class="demo-caption">Все цены и позиции — примеры для лабораторной работы. Перед реальной покупкой нужно уточнять наличие, стоимость и фактическое состояние телефона.</div>
+    </section>
+
+    <section class="sell-area section" id="sell" aria-labelledby="sellTitle"><div class="wrap sell-layout"><div class="sell-info"><div class="eyebrow light">02 / ПРОДАТЬ СМАРТФОН</div><h2 id="sellTitle">Узнайте, с чего <br>начать оценку.</h2><p>Расскажите о смартфоне — мы подготовим краткую карточку с его характеристиками. Её можно скопировать и показать при обращении в магазин.</p>
+      <div class="sell-side-rule"></div><h3>На что смотрят при оценке</h3><ul><li>Модель и память</li><li>Работоспособность, дисплей и корпус</li><li>Комплект и результаты очного осмотра</li></ul><p class="sell-small">Данная форма не рассчитывает цену и не отправляет личные данные на сервер.</p></div>
+      <form id="valuationForm" class="valuation-form" novalidate><div class="form-top"><span>АНКЕТА УСТРОЙСТВА</span><span>01 — 06</span></div><h3>Предварительная заявка</h3><p>Поля со звёздочкой обязательны</p>
+        <div class="form-grid"><label class="wide">Модель телефона <span>*</span><input id="phoneModel" name="phoneModel" placeholder="Например, iPhone 13" required maxlength="70" autocomplete="off"></label>
+          <label>Память <span>*</span><select id="storage" name="storage" required><option value="">Выберите объём</option><option>64 ГБ</option><option>128 ГБ</option><option>256 ГБ</option><option>512 ГБ</option><option>1 ТБ</option></select></label>
+          <label>Экран <span>*</span><select id="screenState" name="screenState" required><option value="">Выберите</option><option>Без повреждений</option><option>Мелкие царапины</option><option>Есть трещины</option></select></label>
+          <label>Корпус <span>*</span><select id="bodyState" name="bodyState" required><option value="">Выберите</option><option>Без заметных следов</option><option>Небольшие потёртости</option><option>Есть сколы/вмятины</option></select></label>
+          <label>Комплектация <span>*</span><select id="packageState" name="packageState" required><option value="">Выберите</option><option>Телефон и коробка</option><option>Только телефон</option><option>Телефон, коробка и кабель</option></select></label>
+          <label class="wide">Ваш контакт <span>*</span><input id="contact" name="contact" placeholder="Телефон или @username" required minlength="4" maxlength="90" autocomplete="off"><small>Контакт попадёт только в текст, который вы сами скопируете.</small></label></div>
+        <div id="formError" class="form-error" role="alert" hidden></div><button type="submit" class="btn btn-primary form-submit">Сформировать заявку <span aria-hidden="true">↗</span></button><p class="form-privacy">Без отправки данных и без автоматической оценки цены.</p>
+        <div id="requestPreview" class="preview" hidden><h4>Заявка готова для копирования</h4><p>Это текстовый предпросмотр. Ничего никуда не отправлено.</p><pre id="requestText"></pre><button type="button" class="copy-btn" id="copyRequest">Скопировать текст</button><span id="copyStatus" role="status" aria-live="polite"></span></div>
+      </form></div></section>
+
+    <section class="steps section wrap" id="how"><div class="section-header"><div><div class="eyebrow">03 / ПРОСТО И ПО ПОРЯДКУ</div><h2>Как проходит скупка<span class="blue-period">.</span></h2><p class="section-intro">Пример обычного процесса: окончательные условия согласовывают при осмотре.</p></div></div><ol class="steps-grid"><li><span class="step-n">01</span><h3>Заявка</h3><p>Укажите модель, память и состояние, подготовьте текст обращения.</p></li><li><span class="step-n">02</span><h3>Осмотр</h3><p>При личной встрече проверяются внешний вид и работа функций телефона.</p></li><li><span class="step-n">03</span><h3>Окончательная оценка</h3><p>Сумма зависит от состояния и результатов проверки устройства.</p></li><li><span class="step-n">04</span><h3>Решение о продаже</h3><p>Владелец знакомится с условиями и самостоятельно принимает решение.</p></li></ol></section>
+
+    <section class="about-area" id="about"><div class="wrap about-layout"><div><div class="eyebrow">04 / О МАГАЗИНЕ</div><h2>Не просто витрина.<br>Понятный выбор.</h2></div><div><p>RE — концепция небольшого городского магазина в Бишкеке. Сайт показывает два направления: продажу смартфонов и подготовку к выкупу бывших в использовании устройств.</p><p>В реальном магазине покупателю важно уточнить состояние аккумулятора, работу связи, камер, экрана, а также наличие блокировок и комплект документов. Эти сведения нельзя достоверно определить по фотографии.</p><div class="about-note">В учебной версии нет оплаты, бронирования, реального адреса точки или гарантированного срока обслуживания.</div></div></div></section>
+
+    <section class="conditions section wrap" aria-labelledby="conditionsTitle"><div class="section-header"><div><div class="eyebrow">05 / ПЕРЕД ПОКУПКОЙ</div><h2 id="conditionsTitle">Что стоит проверить<span class="blue-period">.</span></h2></div></div><div class="conditions-grid"><article><span>А</span><h3>Экран и корпус</h3><p>Осмотрите стекло, рамку, камеры и кнопки; уточните, был ли ремонт.</p></article><article><span>Б</span><h3>Основные функции</h3><p>Проверьте зарядку, звук, микрофон, Wi-Fi, мобильную связь и камеры.</p></article><article><span>В</span><h3>Учётные записи</h3><p>До сделки убедитесь, что устройство не заблокировано чужим аккаунтом.</p></article></div></section>
+
+    <section class="contact-section" id="contacts"><div class="wrap contact-layout"><div><div class="eyebrow light">06 / СВЯЗЬ</div><h2>Давайте на связи.</h2><p>Учебная контактная информация для оформления лабораторной работы.</p></div><div class="contact-details"><p><span>Город</span><strong>Бишкек, Кыргызстан</strong></p><p><span>Электронная почта (пример)</span><strong>hello@re.example</strong></p><p><span>Адрес магазина</span><strong>Не указан — демонстрационный проект</strong></p><p class="contact-footnote">Этот домен зарезервирован для примеров, на него нельзя направить заявку. Для работающего магазина добавьте настоящие контакты.</p></div></div></section>
+  </main>
+  <footer class="footer"><div class="wrap footer-row"><div><a class="footer-logo" href="#top">re<span>.</span></a><small>Смартфоны с историей · учебный проект, 2026</small></div><div><a href="#catalog">Каталог</a><a href="#sell">Оценка</a><a href="assets/images/ИСТОЧНИКИ_ФОТО.txt">Источники фотографий</a></div><span>Сделано для лабораторной работы</span></div></footer>
+</body>
+</html>
